@@ -22,25 +22,28 @@ require_once('header.php'); ?>
 
 	<div class="wrap">
     <section>
-      <h2>どうして<?php echo $result?>なの？</h2>
+      <div id="contents">
+				<h2>どうして<?php echo $result?>なの？</h2>
 
-			<form method="POST" action="why.php">
-				<input id="inputbox" class="button button--why--top" name="inputbox" type="text" placeholder="入力してください">
-				<button type="submit" class="button button--why">まだツヅケル?</button>
-				<button type="button" id="buddha" class="button button--why">テンゴクにイク</button>
-			</form>
+				<form method="POST" action="why.php">
+					<input id="inputbox" class="button button--why--top" name="inputbox" type="text" placeholder="入力してください">
+					<button type="submit" class="button button--why">まだツヅケル?</button>
+					<button type="button" id="buddha" class="button button--why">テンゴクにイク</button>
+				</form>
+			</div>
+
+			<ul id="lusts" style="display: none;">
+				<li>test</li>
+				<li>test</li>
+				<li>test</li>
+				<?php
+				foreach ($_SESSION['result'] as $result): ?>
+					<li><?php echo $result ?> </li>
+				<?php endforeach; ?>
+			<ul>
     </section>
   </div>
 
-	<ul id="lusts" style="display: block;">
-		<li>test</li>
-		<li>test</li>
-		<li>test</li>
-		<?php
-		foreach ($_SESSION['result'] as $result): ?>
-			<li><?php echo $result ?> </li>
-		<?php endforeach; ?>
-	<ul>
 
 
 </body>
