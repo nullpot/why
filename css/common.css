@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*--------------------------------------------------
+clearfix
+--------------------------------------------------*/
+.cf:after {content: ".";display: block;clear: both;height: 0;visibility: hidden;}
+.cf {min-height: 1px;}
+* html .cf {height: 1px;/*\*//*/height: auto;overflow: hidden;/**/}
+
+
+@media screen and (max-width: 640px) {
+	img {
+		width: 100%!important;
+	}
+}
