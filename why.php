@@ -37,9 +37,25 @@ require_once('header.php'); ?>
 				foreach ($_SESSION['result'] as $result): ?>
 					<li><?php echo $result ?> </li>
 				<?php endforeach; ?>
-			<ul>
+			</ul>
     </section>
   </div>
+
+<script type="application/javascript">
+(function () {
+  var buddha = document.getElementById('buddha');
+  if (buddha) {
+    buddha.onclick = function () {
+    var contents = document.getElementById('contents');
+    var lusts = document.getElementById('lusts');
+      if (contents && lusts) {
+        contents.style.display = 'none';
+        lusts.style.display = 'block';
+      }
+    };
+  }
+}());
+</script>
 
 
 
