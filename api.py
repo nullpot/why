@@ -32,7 +32,7 @@ def get_data(message):
         res_json = json.loads(res.read())
         if not isinstance(res_json, dict) or len(res_json) == 0:
             return (message, 200, {'Content-Type': 'text/plain'})
-        d = sorted(json.loads(res_data).items(), key=lambda x: x[1])
+        d = sorted(json.loads(res_json).items(), key=lambda x: x[1])
         return (d.pop()[0], 200, {'Content-Type': 'text/plain'})
     except AttributeError as e:
         return ('Unknown Error has occurred: %s' % (e,), 500, {'Content-Type': 'text/plain'})
