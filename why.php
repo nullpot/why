@@ -33,9 +33,6 @@ require_once('header.php'); ?>
 			</div>
 
 			<ul id="lusts" style="display: none;">
-				<li>test</li>
-				<li>test</li>
-				<li>test</li>
 				<?php
 				foreach ($_SESSION['result'] as $result): ?>
 					<li><?php echo $result ?> </li>
