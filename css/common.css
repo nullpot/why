@@ -9,20 +9,18 @@ clearfix
 * html .cf {height: 1px;/*\*//*/height: auto;overflow: hidden;/**/}
 
 
-@media screen and (max-width: 640px) {
-	img {
-		width: 100%!important;
-	}
-}
-
-
 /*--------------------------------------------------
 common
 --------------------------------------------------*/
 body {
 	background-color: #640000;
+	color: #fff;
 }
 
+
+/*--------------------------------------------------
+header
+--------------------------------------------------*/
 header {
 	margin: 10px 0 0 10px;
 }
@@ -33,29 +31,98 @@ h1 img {
 	width: 100%;
 }
 
+
+/*--------------------------------------------------
+container
+--------------------------------------------------*/
 .wrap {
 	width: 100%;
 	max-width: 960px;
 	margin: 0 auto;
 }
+
 section {
 	margin: 50px 100px 0;
 	text-align: center;
 }
 section img {
 	width: 100%;
-	margin-bottom: 60px;
+	margin-bottom: 10px;
 }
 
+h2 {
+	margin-bottom: 50px;
+	font-size: 40px;
+	color: #fff;
+}
+
+
+/*--------------------------------------------------
+form
+--------------------------------------------------*/
 .button {
+	display: block;
+	width: 300px;
+	background-color: #fff;
+	text-align: center;
+	margin: 20px auto;
 	padding: 10px 20px;
 	font-size: 20px;
 	font-weight: bold;
-	color: #fff;
+	color: #640000;
 	border: 5px solid #fff;
 	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
 	cursor: pointer;
 }
-.button:hover {
+.button--why,
+.button--why--top {
+	margin: 10px auto;
+}
+.button--why--top {
+	display: block;
+}
+
+.button:hover,
+.button--why:hover {
 	opacity: .7;
+	-moz-opacity: .7;
+	-webkit-opacity: .7;
+}
+
+input[type="text"] {
+	width: 250px;
+	color: #fff;
+	background-color: transparent;
+}
+
+
+/*--------------------------------------------------
+result
+--------------------------------------------------*/
+ul {
+	text-align: left;
+}
+
+li {
+	padding: 10px 0;
+	border-bottom: 1px dotted #fff;
+}
+li:before {
+	content: "・"
+}
+
+/*--------------------------------------------------
+sp
+--------------------------------------------------*/
+@media screen and (max-width: 640px) {
+	img {
+		width: 100%;
+	}
+
+	section {
+		margin: 10px;
+		text-align: center;
+	}
 }

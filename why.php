@@ -1,23 +1,46 @@
-<?php require_once('header.php'); ?>
 <?php
+session_start();
+
+if (!isset($_SESSION['count'])) {
+	$_SESSION['count'] = 0;
+}else{
+	$_SESSION['count']++;
+}
+
+$_SESSION['result'][] = $_POST['inputbox'];
+
 // 解析
-// require_once('');
-?>
+$result = file_get_contents('http://www.ykamei.net/?message=' . $_POST['inputbox']);
+
+require_once('header.php'); ?>
 
 <body>
 
-<header>
-	<h1>なぜ地獄
-		<small>ほげほげ</small>
-	</h1>
-</header>
+	<header>
+		<h1><img src="img/logo.png" alt="ナゼジゴク"></h1>
+	</header>
 
-<h2>あなたのお悩みなんてーの</h2>
-<?php if($count>1):?>
-<form method="POST" action="result.php">
-	<button type="submit">submit</button>
-</form>
-<?php endif;?>
+	<div class="wrap">
+    <section>
+      <h2>どうして<?php echo $result?>なの？</h2>
+
+			<form method="POST" action="why.php">
+				<input id="inputbox" class="button button--why--top" name="inputbox" type="text" placeholder="入力してください">
+				<button type="submit" class="button button--why">まだツヅケル?</button>
+				<button type="button" id="buddha" class="button button--why">テンゴクにイク</button>
+			</form>
+    </section>
+  </div>
+
+	<ul id="lusts" style="display: block;">
+		<li>test</li>
+		<li>test</li>
+		<li>test</li>
+		<?php
+		foreach ($_SESSION['result'] as $result): ?>
+			<li><?php echo $result ?> </li>
+		<?php endforeach; ?>
+	<ul>
 
 
 </body>
