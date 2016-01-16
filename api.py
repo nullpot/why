@@ -29,16 +29,13 @@ def get_data(message):
         # FIXME
         return (e.read(), 500, {'Content-Type': 'text/plain'})
     try:
-        res_json = json.loads(res.read())
+        res_json = json.loads(res.read().decode('utf-8'))
         if not isinstance(res_json, dict) or len(res_json) == 0:
             return (message, 200, {'Content-Type': 'text/plain'})
-        d = sorted(json.loads(res_json).items(), key=lambda x: x[1])
+        d = sorted(res_json.items(), key=lambda x: x[1])
         return (d.pop()[0], 200, {'Content-Type': 'text/plain'})
     except AttributeError as e:
         return ('Unknown Error has occurred: %s' % (e,), 500, {'Content-Type': 'text/plain'})
-    except Exception as e:
-        # FIXME
-        return ('%s' % (e,), 500, {'Content-Type': 'text/plain'})
 
 
 @app.route('/', methods=['GET'])
