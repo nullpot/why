@@ -14,3 +14,48 @@ clearfix
 		width: 100%!important;
 	}
 }
+
+
+/*--------------------------------------------------
+common
+--------------------------------------------------*/
+body {
+	background-color: #640000;
+}
+
+header {
+	margin: 10px 0 0 10px;
+}
+h1 {
+	width: 133px;
+}
+h1 img {
+	width: 100%;
+}
+
+.wrap {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+section {
+	margin: 50px 100px 0;
+	text-align: center;
+}
+section img {
+	width: 100%;
+	margin-bottom: 60px;
+}
+
+.button {
+	padding: 10px 20px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	border: 5px solid #fff;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.button:hover {
+	opacity: .7;
+}
